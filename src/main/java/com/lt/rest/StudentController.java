@@ -1,11 +1,14 @@
 package com.lt.rest;
 
+import java.util.List;
+
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -47,6 +50,15 @@ public class StudentController {
 		studentDaoImpl.registerCourse(registeredCourse.getCourseCode(), registeredCourse.getSemster(),
 				registeredCourse.getStudentId(), registeredCourse.getMarks());
 		return new ResponseEntity<String>("Course Registration Succesfull",HttpStatus.OK);
+
+	}
+	
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.GET, value = "/studentregistredCourse/{id}")
+	@ResponseBody
+	public ResponseEntity<List<String>> getStudentRegiCourse(@PathVariable("id") int studentId) {
+
+		List<String> regList=studentDaoImpl.viewRegisterCourse(studentId);
+		return new ResponseEntity<List<String>>(regList,HttpStatus.OK);
 
 	}
 
