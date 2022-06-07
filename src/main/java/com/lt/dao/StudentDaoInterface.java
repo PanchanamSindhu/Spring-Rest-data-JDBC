@@ -18,6 +18,8 @@ public interface StudentDaoInterface {
 
 	public List<String> viewRegisterCourse(int studentId);
 
+	public void removeCourse(String courseCode);
+
 	
 
 }

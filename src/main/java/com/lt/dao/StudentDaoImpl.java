@@ -31,9 +31,8 @@ public class StudentDaoImpl implements StudentDaoInterface {
 	@Override
 	public void registerStudent(Integer studentId,String studentName) {
 
-		String SQL = "insert into student (studentId, studentName) values (?,?)";
 
-		jdbcConfiguration.jdbcTemplate().update(SQL,studentId, studentName);
+		jdbcConfiguration.jdbcTemplate().update(JDBCTemplateSQLConstants.STUDENT_INSERT_SQL,studentId, studentName);
 
 		System.out.println("Created Record Name = " + studentName + " ID = " + studentId );
 
@@ -42,9 +41,9 @@ public class StudentDaoImpl implements StudentDaoInterface {
 	@Transactional
 	@Override
 	public void registerCourse(String courseCode, Integer semster, Integer studentId, int marks) {
-		String SQL = "insert into RegisteredCourse (courseCode, semster, studentId, marks) values (?,?,?,?)";
+		
 
-		jdbcConfiguration.jdbcTemplate().update(SQL, courseCode, semster, studentId, marks);
+		jdbcConfiguration.jdbcTemplate().update(JDBCTemplateSQLConstants.STUDENT_REGISTER_COURSE, courseCode, semster, studentId, marks);
 
 		System.out.println("Created Record CourseCode = " + courseCode + " Semester = " + semster + " StudentID = "
 				+ studentId + " MArks = " + marks);
@@ -61,6 +60,14 @@ public class StudentDaoImpl implements StudentDaoInterface {
 			st.add(cs.getCourseCode());
 		}
 		return st;
+	}
+
+	@Transactional
+	@Override
+	public void removeCourse(String courseCode) {
+		
+		jdbcConfiguration.jdbcTemplate().update(JDBCTemplateSQLConstants.DELETE_REG_COURSE_SQL, courseCode);
+		System.out.println("Deleted Record with ID = " + courseCode);
 	}
 
 }

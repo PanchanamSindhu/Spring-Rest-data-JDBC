@@ -13,4 +13,7 @@ public class JDBCTemplateSQLConstants {
 			"INNER JOIN student ON (student.studentId=RegisteredCourse.studentId) " +
 			"WHERE student.studentId = ? ";
 			 
+	public static final String DELETE_REG_COURSE_SQL = "delete from RegisteredCourse where courseCode = ?";
+	public static final  String STUDENT_INSERT_SQL = "insert into student (studentId, studentName) values (?,?)";
+	public static final String STUDENT_REGISTER_COURSE = "insert into RegisteredCourse (courseCode, semster, studentId, marks) values (?,?,?,?)";
 }
