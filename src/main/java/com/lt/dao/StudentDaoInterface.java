@@ -1,8 +1,7 @@
 package com.lt.dao;
 
 import java.util.List;
-
-import com.lt.dto.RegisteredCourse;
+import java.util.Map;
 
 /**
  * Interface class that has the following methods.
@@ -19,6 +18,8 @@ public interface StudentDaoInterface {
 	public List<String> viewRegisterCourse(int studentId);
 
 	public void removeCourse(String courseCode);
+
+	public Map<String, String> viewCatalog();
 
 	
 
