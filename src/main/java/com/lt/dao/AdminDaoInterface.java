@@ -17,6 +17,14 @@ import com.lt.dto.Student;
 public interface AdminDaoInterface {
 
 	public Student getStudent(Integer id);
+	
+	public void addCourse(String courseCode, String courseName,String isOffered, String instructor);
+	
+	public List<Course> getCourses();
+
+	public void removeCourse(String courseCode);
+
+	public void addProfessor(int profId, String profName, String department, String designation);
 
 	
 }

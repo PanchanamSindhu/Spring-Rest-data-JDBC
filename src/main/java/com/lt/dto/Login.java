@@ -3,14 +3,17 @@
  */
 package com.lt.dto;
 
+import java.io.Serializable;
+
 /**
  * @author user209
  *
  */
-public class Login {
+public class Login implements Serializable{
 
-	private double id;
-	private String type;
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String role;
 	private String userName;
 	private String password;
 	/**
@@ -40,26 +43,26 @@ public class Login {
 	/**
 	 * @return the id
 	 */
-	public double getId() {
+	public int getId() {
 		return id;
 	}
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(double id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	/**
 	 * @return the type
 	 */
 	public String getType() {
-		return type;
+		return role;
 	}
 	/**
 	 * @param type the type to set
 	 */
-	public void setType(String type) {
-		this.type = type;
+	public void setType(String role) {
+		this.role = role;
 	}
 	
 	

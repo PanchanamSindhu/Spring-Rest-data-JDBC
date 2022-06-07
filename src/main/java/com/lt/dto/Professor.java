@@ -5,11 +5,11 @@ package com.lt.dto;
  
 */
 public class Professor {
-
+	
+	private int profId;
 	private String profName;
 	private String department;
 	private String designation;
-
 
 	/** Gets the professor department.
 	 * @return A string representing the professor department
@@ -58,5 +58,21 @@ public class Professor {
 	public void setProfName(String profName) {
 		this.profName = profName;
 	}
+
+	/**
+	 * @return the profId
+	 */
+	public int getProfId() {
+		return profId;
+	}
+
+	/**
+	 * @param profId the profId to set
+	 */
+	public void setProfId(int profId) {
+		this.profId = profId;
+	}
+	
+	
 
 }

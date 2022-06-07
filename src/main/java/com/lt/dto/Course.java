@@ -1,7 +1,10 @@
 package com.lt.dto;
 
-public class Course {
+import java.io.Serializable;
 
+public class Course  implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private String courseCode;
 	private String courseName;
 	private String isOffered;

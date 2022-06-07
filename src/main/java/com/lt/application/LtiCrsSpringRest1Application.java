@@ -9,6 +9,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.lt.configuration.JDBCConfiguration;
 
+/**
+* The CRS program implements an Spring Rest application that simply allows the user to
+* perform Specific actions by taking Input from Postman.
+*
+* @author group5
+* @since 2022-06-02
+*/
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan({"com.lt.*"})
