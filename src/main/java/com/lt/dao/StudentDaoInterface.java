@@ -1,10 +1,5 @@
 package com.lt.dao;
 
-import java.util.List;
-import java.util.Map;
-
-import com.lt.dto.Report;
-import com.lt.dto.Student;
 
 /**
  * Interface class that has the following methods.
@@ -14,10 +9,10 @@ import com.lt.dto.Student;
  */
 public interface StudentDaoInterface {
 
+	public void registerStudent(Integer studentId,String studentName);
+
+	public void registerCourse(String courseCode, Integer semster, Integer studentId, int marks);
+
 	
-	public void create(String studentName, Integer studentId, 
-			String password);
-
-
 
 }

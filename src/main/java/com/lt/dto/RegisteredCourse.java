@@ -1,10 +1,11 @@
 package com.lt.dto;
 
-import java.util.List;
+import java.io.Serializable;
 
-public class RegisteredCourse {
+public class RegisteredCourse implements Serializable {
 
-	private List<String> courseCode;
+	private static final long serialVersionUID = 1L;
+	private String courseCode;
 	private int semster;
 	private int studentId;
 	private int marks;
@@ -28,14 +29,14 @@ public class RegisteredCourse {
 	/**
 	 * @return the courseCode
 	 */
-	public List<String> getCourseCode() {
+	public String getCourseCode() {
 		return courseCode;
 	}
 
 	/**
 	 * @param courseCode the courseCode to set
 	 */
-	public void setCourseCode(List<String> courseCode) {
+	public void setCourseCode(String courseCode) {
 		this.courseCode = courseCode;
 	}
 
